@@ -16,6 +16,8 @@ body{
     font-size: 13px;
     font-family:arial,'pingfang sc',stheiti,'microsoft yahei',sans-serif ;
     background: #fff;
+
+    z-index: 10;
 }
 .page-header{
     position: absolute;
@@ -26,6 +28,7 @@ body{
     padding: 11px 0;
 
     line-height: 24px;
+    /* 添加z-index: ;后，能消除头部被主体遮挡，导致无法选中头部导航里面的内容的问题 */
     z-index: 2000;
 }
 .page-header .top-nav{
@@ -66,6 +69,8 @@ body{
     border-right: 4px dashed transparent;
     transition: all 0.25s;
 }
+
+/* 神来之笔， 想让鼠标划过时，三角翻转，单纯的span.top-nav-arr:hover{},只能当鼠标在三角处才能实现翻转，a:hover span.top-nav-arr{}则能实现，鼠标在<更多🔺>这一整块都实现文字变色+三角翻转*/
 .page-header .top-nav a:hover span.top-nav-arr{
     transform: rotate(180deg);
     border-top: 4px solid #ff5a34;
