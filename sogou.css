@@ -34,7 +34,7 @@ body{
 .page-header .header-nav{
     float: left;  
 }
-.header-nav span{
+.header-nav span.web{
     display: inline-block;
 
     margin-left: 20px;
@@ -49,15 +49,19 @@ body{
     text-decoration: none;
     transition: color 0.25s;
 }
-.page-header .header-nav a:hover{
+.page-header .header-nav a.n:hover{
     color: #ff5a34;
     text-decoration: none;
 }
-.header-nav a:last-child{
+.header-nav .show-more-box{
+    display: inline-block;
     position: relative;
-    padding-right: 10px;
 }
-.header-nav a span.header-nav-arr{
+.header-nav .show-more-box a.show-more-title{
+    position: relative;
+    padding-right: 10px;   
+}
+.header-nav a.show-more-title span.title-arr{
     position: absolute;
     right: 0;
     top: 10px;
@@ -69,11 +73,62 @@ body{
     border-right: 4px dashed transparent;
     transition: all 0.25s;
 }
+.header-nav .show-more-box .show-more-list{
+    position:absolute ;
+    left: 2px;
+    opacity: 0;    
+    width: 60px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    box-shadow: 0 1px 8px rgba(0,0,0,.1);
+    text-align: center;
+    line-height: 28px;
+    background: #fff;
+}
 
-/* 神来之笔， 想让鼠标划过时，三角翻转，单纯的span.header-nav-arr:hover{},只能当鼠标在三角处才能实现翻转，a:hover span.header-nav-arr{}则能实现，鼠标在<更多🔺>这一整块都实现文字变色+三角翻转*/
-.page-header .header-nav a:hover span.header-nav-arr{
+.show-more-box .show-more-list::after{
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 4px dashed transparent;
+    border-bottom: 4px solid #fff;
+    border-right: 4px dashed transparent;
+    box-shadow: 0 1px 8px rgba(0,0,0,.1);
+}
+.show-more-box .show-more-list .list-item{
+    margin-left: 0;
+    width: 100%;
+    transition: all 0.25s;
+}
+
+.header-nav .show-more-box:hover .show-more-title{
+    color: #ff5a34;
+}
+
+.header-nav .show-more-box:hover .show-more-list{
+    position: absolute;
+    opacity: 1;    
+    width: 60px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    box-shadow: 0 1px 8px rgba(0,0,0,.1);
+    text-align: center;
+    line-height: 28px;
+    background: #fff;
+}
+
+.show-more-box:hover .show-more-title span.title-arr{
     transform: rotate(180deg);
-    border-top: 4px solid #ff5a34;
+    border-top: 4px solid #ec1010;
+}
+
+.list-item:hover {
+    background: #fd6853;
+    color: #fff;
 }
 
 .header-box{
