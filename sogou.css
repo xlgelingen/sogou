@@ -28,13 +28,12 @@ body{
     padding: 11px 0;
 
     line-height: 24px;
-    /* 添加z-index: ;后，能消除头部被主体遮挡，导致无法选中头部导航里面的内容的问题 */
     z-index: 2000;
 }
 .page-header .header-nav{
     float: left;  
 }
-.header-nav span.web{
+.header-nav span.nav-web{
     display: inline-block;
 
     margin-left: 20px;
