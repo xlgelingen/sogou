@@ -31,10 +31,10 @@ body{
     /* 添加z-index: ;后，能消除头部被主体遮挡，导致无法选中头部导航里面的内容的问题 */
     z-index: 2000;
 }
-.page-header .top-nav{
+.page-header .header-nav{
     float: left;  
 }
-.top-nav span{
+.header-nav span{
     display: inline-block;
 
     margin-left: 20px;
@@ -42,22 +42,22 @@ body{
     font-weight: 700;
     text-decoration: none;
 }
-.top-nav a{
+.header-nav a{
     display: inline-block;
     margin-left: 20px; 
     color: rgba(0,0, 0, .75);
     text-decoration: none;
     transition: color 0.25s;
 }
-.page-header .top-nav a:hover{
+.page-header .header-nav a:hover{
     color: #ff5a34;
     text-decoration: none;
 }
-.top-nav a:last-child{
+.header-nav a:last-child{
     position: relative;
     padding-right: 10px;
 }
-.top-nav a span.top-nav-arr{
+.header-nav a span.header-nav-arr{
     position: absolute;
     right: 0;
     top: 10px;
@@ -70,19 +70,19 @@ body{
     transition: all 0.25s;
 }
 
-/* 神来之笔， 想让鼠标划过时，三角翻转，单纯的span.top-nav-arr:hover{},只能当鼠标在三角处才能实现翻转，a:hover span.top-nav-arr{}则能实现，鼠标在<更多🔺>这一整块都实现文字变色+三角翻转*/
-.page-header .top-nav a:hover span.top-nav-arr{
+/* 神来之笔， 想让鼠标划过时，三角翻转，单纯的span.header-nav-arr:hover{},只能当鼠标在三角处才能实现翻转，a:hover span.header-nav-arr{}则能实现，鼠标在<更多🔺>这一整块都实现文字变色+三角翻转*/
+.page-header .header-nav a:hover span.header-nav-arr{
     transform: rotate(180deg);
     border-top: 4px solid #ff5a34;
 }
 
-.user-box{
+.header-box{
     position: absolute;
     right: 5px;
     top: 10px;
     font-size: 12px;
 }
-.local-weather{
+.box-weather{
     float: left;
     position: relative;
     color: rgba(0,0,0,.75);
@@ -92,7 +92,7 @@ body{
    position: relative;
    top: 3px;
 }
-.user-box .line {
+.header-box .line {
     float: left;
     width: 1px;
     height: 14px;
@@ -102,7 +102,7 @@ body{
     clear: none;
     border: 0;
 }
-.user-box a{
+.header-box a{
     float: left;
     position: relative;
     top: 5px;
@@ -117,13 +117,13 @@ body{
     height: 37%;
 }
 
-.page-mainer .logo{
+.page-mainer .min-logo{
     position: relative;
     height: 100%;
     margin: 0 auto;
 
 }
-.page-mainer .logo img{
+.page-mainer .min-logo img{
     position: absolute;
     left: 50%;
    margin-left: -220px;
@@ -131,7 +131,7 @@ body{
     width: 440px;
     height: 140px;
 }
-.page-mainer  .search-box{
+.page-mainer  .min-search-box{
     position: relative;
     margin: 0 auto;
     height: 42px;
@@ -144,7 +144,7 @@ body{
     align-items: center;
 }
 
-.page-mainer .search-box .form-search{
+.page-mainer .min-search-box .form-search{
     
     width: 489px;
     height: 18px;
@@ -158,7 +158,7 @@ body{
     font-family: "arial,'pingfang sc',stheiti,'microsoft yahei',sans-serif";
 }
 
-.page-mainer .search-box .inter-box{
+.page-mainer .min-search-box .inter-box{
     position: absolute;
     right: 0;
     top: 0;
