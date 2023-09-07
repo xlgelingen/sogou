@@ -18,11 +18,13 @@ body{
     background: #fff;
 
     z-index: 10;
+    overflow-y: scroll;
 }
 .page-header{
-    position: absolute;
-    left: 0;
-    top: 0;
+    /* 创建导航菜单一般用一下两行命令进行flex布局 */
+    display: flex;
+    justify-content: space-between;
+
     height: 24px;
     width: 100%;
     padding: 11px 0;
@@ -30,9 +32,7 @@ body{
     line-height: 24px;
     z-index: 2000;
 }
-.page-header .header-nav{
-    float: left;  
-}
+
 .header-nav span.nav-web{
     display: inline-block;
 
@@ -131,23 +131,20 @@ body{
 }
 
 .header-box{
-    position: absolute;
-    right: 5px;
-    top: 10px;
+    display: flex;
+    margin: 4px 5px 0 0;
     font-size: 12px;
 }
-.box-weather{
-    float: left;
-    position: relative;
+.header-box .box-weather{
     color: rgba(0,0,0,.75);
 }
-.weather-box img{
+.header-box .box-weather .weather-box img{
     margin: 0 8px;
    position: relative;
    top: 3px;
 }
+
 .header-box .line {
-    float: left;
     width: 1px;
     height: 14px;
     overflow: hidden;
@@ -156,8 +153,7 @@ body{
     clear: none;
     border: 0;
 }
-.header-box a{
-    float: left;
+.header-box a.header-box-no_border{
     position: relative;
     top: 5px;
     padding-left: 8px;
@@ -168,28 +164,27 @@ body{
 }
 
 .page-mainer{
-    height: 37%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
 }
 
-.page-mainer .min-logo{
-    position: relative;
-    height: 100%;
-    margin: 0 auto;
-
+.page-mainer .mainer-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height:calc(37vh - 46px);
 }
-.page-mainer .min-logo img{
-    position: absolute;
-    left: 50%;
-   margin-left: -220px;
-    bottom: 0;
+.page-mainer .mainer-logo img{
     width: 440px;
     height: 140px;
 }
-.page-mainer  .min-search-box{
+.page-mainer  .mainer-search-box{
     position: relative;
     margin: 0 auto;
     height: 42px;
-    width: 489px;
+    width: 650px;
     padding: 0 154px 0 10px;
     border-radius: 3px;
     border: solid 1px #ababab;
@@ -198,7 +193,7 @@ body{
     align-items: center;
 }
 
-.page-mainer .min-search-box .form-search{
+.page-mainer .mainer-search-box .box-search{
     
     width: 489px;
     height: 18px;
@@ -212,7 +207,7 @@ body{
     font-family: "arial,'pingfang sc',stheiti,'microsoft yahei',sans-serif";
 }
 
-.page-mainer .min-search-box .inter-box{
+.page-mainer .mainer-search-box .box-inter{
     position: absolute;
     right: 0;
     top: 0;
@@ -221,7 +216,7 @@ body{
     border-left: 1px solid #e6e6e6;
 }
 
-.inter-box .submit-btn{
+.box-inter .submit-btn{
     display: block;
     width: 99px;
     height: 42px;
@@ -237,25 +232,18 @@ body{
 }
 
 .page-footer{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-
-    width: 1002px;
-    margin-left: -501px;
+    display: flex;
+    justify-content: center;   
     padding-bottom: 28px;
-    overflow: hidden;
-
     font-size: 12px;
     color: #666;
     line-height: 22px;
     text-align: center;
 }
-.page-footer .ft-info{
-    float: left;
+.page-footer .footer-info{
     padding-left: 74px;
 }
-.page-footer .ft-info .line{
+.page-footer .footer-info .line{
     display: inline-block;
     width: 1px;
     height: 12px;
@@ -263,18 +251,18 @@ body{
     background: #e4e4e4;
 }
 
-.page-footer .ft-info a{
+.page-footer .footer-info a{
     display: inline-block;
     margin: 0;
     color: rgba(0,0,0,.7);
     text-decoration: none;
 }
-.page-footer .ft-info a:hover{
+.page-footer .footer-info a:hover{
     transition: color .2s;
     color: rgba(0,0,0,.9);
 }
 
-.ft-info a span{
+.footer-info a span{
     margin: 4px 5px 0 0;
     display: inline-block;
     position: relative;
@@ -285,43 +273,41 @@ body{
     background-image: url(https://dlweb.sogoucdn.com/pcsearch/web/index/images/ico_ft_8795b8d.gif?v=1e99707e);
     background-repeat: no-repeat;
 }
-.ft-info a span.icon1{
+.footer-info a span.icon1{
     background-position: 0 0;
 }
-.ft-info a span.icon2{
+.footer-info a span.icon2{
     background-position: 0 -29px;
 }
-.ft-info a span.icon3{
+.footer-info a span.icon3{
     background-position: 0 -57px;
 }
-.page-footer .ft-info a:hover .icon1{
+.page-footer .footer-info a:hover .icon1{
     background-position: 0 -15px;
 }
-.page-footer .ft-info a:hover .icon2{
+.page-footer .footer-info a:hover .icon2{
     background-position: 0 -43px;
 }
-.page-footer .ft-info a:hover .icon3{
+.page-footer .footer-info a:hover .icon3{
     background-position: 0 -71px;
 }
 
-.page-footer .ft-info .g{
+.page-footer .footer-info .g{
     color: rgba(0,0,0,.5);
 }
 
-.page-footer .ft-info a.g i.icon4{
+.page-footer .footer-info a.g i.icon4{
     display: inline-block;
     width: 13px;
     height: 12px;
     background: url(https://dlweb.sogoucdn.com/pcsearch/web/index/images/wangan_40d89ca.png?v=be16660a) no-repeat;
 }
 
-.page-footer .ft-older{
-    float: left;
+.page-footer .footer-older{
     width: 86px;
     height: 40px;
     background: url(https://dlweb.sogoucdn.com/pcsearch/web/index/images/fit_older_b3c0b28.png) no-repeat;
     background-size: 86px;
     margin-left: 8px;
-    margin-top: 46px;
-    
+    margin-top: 46px;   
 }
