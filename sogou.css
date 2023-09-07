@@ -19,7 +19,7 @@ body{
     overflow-y: scroll;
 }
 .page-header{
-    /* 创建导航菜单一般用一下两行命令进行flex布局 */
+    /* 创建导航菜单一般用以下两行命令进行flex布局 */
     display: flex;
     justify-content: space-between;
 
